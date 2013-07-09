@@ -74,8 +74,8 @@ int neuron::solve_neuron(unsigned long a_function)
 
     if(f[0]==0)
         theta=1;
-    else
-    theta=-1;
+    /*else
+    theta=-1;*/ //old code, will work anyway
     int temp=0;
     for(int i=1;i<=n_synapses;++i)
     {
@@ -90,7 +90,7 @@ int neuron::solve_neuron(unsigned long a_function)
     //now we have omega(temp)>=theta-sum, so we will do omega(temp)=theta-sum+1 for F=1
     //and omega=theta-sum-1 for F=0(so condition will not met and f will be 0)
     if(f[i]==1)
-        omega_vector[temp]=theta-sum+1;
+        omega_vector[temp]=theta-sum;//+1; old code, will work anyway
     else
         omega_vector[temp]=theta-sum-1;
 
